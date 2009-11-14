@@ -3,12 +3,14 @@
 import os, hashlib
 import gconf, gtk.gdk, gnomevfs, gobject
 
+
 def md5sum(value):
     md5 = hashlib.md5()
     md5.update(value)
     return md5.hexdigest()
 
-class Background(object):
+
+class Background(object): #{{{1
 
     def __init__(self):
         self.client = gconf.client_get_default()
@@ -36,7 +38,7 @@ class Background(object):
 
 
 
-class Thumbnails(dict):
+class Thumbnails(dict): #{{{1
 
     def __init__(self):
         self.thumbnail_dir = os.path.expanduser('~/.thumbnails')
