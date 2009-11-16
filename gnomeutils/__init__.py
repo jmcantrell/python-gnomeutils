@@ -3,12 +3,12 @@
 import os, hashlib
 import gconf, gtk.gdk, gnomevfs, gobject
 
-
-def md5sum(value):
+def md5sum(value): #{{{1
     md5 = hashlib.md5()
     md5.update(value)
     return md5.hexdigest()
 
+#}}}1
 
 class Background(object): #{{{1
 
@@ -62,8 +62,7 @@ class Thumbnails(dict): #{{{1
 
     def create(self, path, thumbnail, size):
         try:
-            pb = gtk.gdk.pixbuf_new_from_file_at_size(path,
-                    *self.thumbnail_sizes[size])
+            pb = gtk.gdk.pixbuf_new_from_file_at_size(path, *self.thumbnail_sizes[size])
         except gobject.GError: # probably a corrupt image
             return None
         tdir = os.path.join(self.thumbnail_dir, size)
@@ -80,8 +79,7 @@ class Thumbnails(dict): #{{{1
             if not os.path.isfile(thumbnail):
                 pb = self.create(self.get_path(uri), thumbnail, size)
             else:
-                pb = gtk.gdk.pixbuf_new_from_file_at_size(
-                        thumbnail, *self.thumbnail_sizes[size])
+                pb = gtk.gdk.pixbuf_new_from_file_at_size(thumbnail, *self.thumbnail_sizes[size])
             self.thumbnail_cache[thumbnail] = pb
         return pb
 

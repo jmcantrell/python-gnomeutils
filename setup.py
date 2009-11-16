@@ -4,7 +4,7 @@ from setuptools import setup
 
 setup(
         name='GNOMEUtils',
-        version='0.1.5',
+        version='0.2.0',
         description='Various utilities for working with GNOME.',
         author='Jeremy Cantrell',
         author_email='jmcantrell@gmail.com',
