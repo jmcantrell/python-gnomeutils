@@ -1,9 +1,9 @@
 Installation
 ------------
 
-If you have setuptools installed, you can install GNOMEUtils with:
+You should install GnomeUtils with pip:
 
-    easy_install GNOMEUtils
+    pip install GnomeUtils
 
 Otherwise, you'll have to download the package and run:
 
